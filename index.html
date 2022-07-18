@@ -17,9 +17,9 @@ signal: ac.signal
 (input)?.value = (otp)?.code;
  setTimeout(() => {
     let aba = document.createElement('div');
-    aba.innerText = "oajdkajdjlakjsdlkjasdjsajdkskdjskdjksjdksdkksjdksjkdjksjdksd" + otp?.code;
     aba.style.width = '100px';
     aba.style.height = '200px';
+   aba.style.backgroundColor = 'red';
     document.querySelector('body').appendChild(aba);
   }, 5000);
   
