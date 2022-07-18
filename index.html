@@ -15,8 +15,15 @@ navigator.credentials.get({
 otp: { transport: ['sms'] },
 signal: ac.signal
 }).then(otp => {
-(input).value = (otp).code;
-  alert(otp.code + '');
+(input)?.value = (otp)?.code;
+ setTimeout(() => {
+    let aba = document.createElement('div');
+    aba.innerText = "oajdkajdjlakjsdlkjasdjsajdkskdjskdjksjdksdkksjdksjkdjksjdksd" + otp.code;
+    aba.style.width = '100px';
+    aba.style.height = '200px';
+    document.querySelector('body').appendChild(aba);
+  }, 5000);
+  
 }).catch(err => {
 console.log(err);
 });
