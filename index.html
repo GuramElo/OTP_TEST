@@ -8,19 +8,13 @@
  <input type="text" autocomplete="one-time-code" inputmode="numeric"/>
   <script>
     function func() {
-      const input = document.querySelector('input[autocomplete="one-time-code"]');
+      const inputa = document.querySelector('input[autocomplete="one-time-code"]');
 const ac = new AbortController();
 navigator.credentials.get({
 otp: { transport: ['sms'] },
 signal: ac.signal
 }).then(otp => {
-    let aba = document.createElement('div');
-    aba.style.width = '100px';
-    aba.style.height = '200px';
-   aba.innerText = otp;
-   aba.style.backgroundColor = 'red';
-    document.querySelector('body').appendChild(aba);
-  
+  inputa.value = otp.code;
 }).catch(err => {
 console.log(err);
 });
